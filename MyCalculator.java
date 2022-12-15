@@ -10,9 +10,14 @@ public class MyCalculator {
         System.out.println("enter a second number and press enter");
         int num2 = reader2.nextInt();
 
+        System.out.println("The total of both numbers is: " + myMethod(num1, num2));
+
+        reader1.close();
+        reader2.close();
+    }
+
         // method to add the 2 numbers 
-        public static int sum(int num1, int num2) {
+        static int myMethod(int num1, int num2) {
             return num1 + num2;
         }
       } 
-    } 
