@@ -8,15 +8,13 @@ import java.util.Collections;
 public class Challenge7Alphabet {
     public static void main(String[] args) {
 
-        // initialise Scanner class, first parsing method and declare user 1st input
+        // initialise Scanner class and parse method to read user input
         Scanner reader = new Scanner(System.in);
-
-        // initialise Scanner class, second parsing method and declare user 2nd input
-        Scanner reader2 = new Scanner(System.in);
 
         // initialise array list
         ArrayList<Integer> list = new ArrayList<Integer>();
         
+        // create while loop
         while (true) {
             // ask for user input
             System.out.print("\n How fast can you type the alphabet?" +
@@ -37,7 +35,7 @@ public class Challenge7Alphabet {
             
             // ask user to start typing and get their start time
             System.out.println("\n Make sure you type in small letters & click enter when you finish. Good luck :): ");
-            String secondResponse = reader2.nextLine();
+            String secondResponse = reader.nextLine();
             Instant finishTime = Instant.now();
 
             // subtract 1st time from 2nd time and use this to tell user how long they took
@@ -61,8 +59,7 @@ public class Challenge7Alphabet {
                 if(str1.equals(secondResponse)) {
                     // tell user they typed correctly
                     System.out.println(" and you typed in the correct order, nice work!");
-                
-                    //list.forEach(item -> System.out.println(item));
+            
                     // tell user best record time
                     Collections.sort(list);
                     System.out.println(" Your fastest time so far is " + list.get(0) + " seconds");
@@ -73,7 +70,6 @@ public class Challenge7Alphabet {
             }
         }
         reader.close();
-        reader2.close();
     }
 
 }
